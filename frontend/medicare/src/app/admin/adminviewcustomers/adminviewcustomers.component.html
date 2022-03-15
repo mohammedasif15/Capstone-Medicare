@@ -1,0 +1,45 @@
+<br>
+<br>
+<button (click)="gotohome()" class="btn btn-warning" style="margin-left: 90%;" >LOG OUT</button>
+
+<br><br>
+<button (click)="adminhome()"  class="btn btn-primary"id="one" >BACK TO ADMIN HOME</button>
+<form>
+<table class="table table-striped table-bordered">
+    
+    <thead>
+        <tr>
+            <th sorted="">CUSTOMER ID</th>
+            <th>CUSTOMER NAME</th> 
+            <th>CUSTOMER PASSWORD</th>
+            <th>CUSTOMER CONTACT</th>
+            <!-- <th>PRODUCT TYPE</th>
+            <th>PRODUCT STATUS</th>   
+            <th>EDIT PRODUCT? </th>
+            <th>DELETE PRODUCT!</th>  
+            <th> AVAILABILTY</th>  -->
+
+        </tr>
+    </thead>
+    <tbody>
+          <tr *ngFor="let br of CustomerList">              
+            <td> {{br.id}} </td>
+            <td> {{br.name}} </td>
+            <td> {{br.password}} </td>  
+            <td> {{br.contact}} </td> 
+            <!-- <td>{{br.ptype}}</td>
+            <td> {{br.status}} </td>    
+            <td>
+                <button type="button" class="btn btn-warning" (click)="OnClickEdit(br.pid)" >EDIT THIS</button>
+            </td>
+            <td>
+                <button  type="button" class="btn btn-danger"  (click)="OnClickDel(br.pid)">DELETE IT</button>
+            </td>    
+            <td>
+               <button (click)="available(br.pid)" *ngIf="br.status=='N'" >MAKE AVAILABLE</button>
+            </td> -->
+        </tr>
+    </tbody>
+    <br>
+</table>
+</form>

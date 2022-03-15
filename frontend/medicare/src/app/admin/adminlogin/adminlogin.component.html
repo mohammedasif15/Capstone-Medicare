@@ -1,0 +1,41 @@
+<br>
+<br>
+<button (click)="gotohome()" class="btn btn-warning" >LOG OUT</button>
+<br>
+<br>
+<form #regForm="ngForm" (ngSubmit)="login()">
+    <div class="container">
+        <h1>Admin Login</h1>
+        <hr>
+        {{message}}
+        <label for="email"><b>Name</b></label>
+        <input #name="ngModel" type="text" placeholder="Enter Name" name="mail" #ue="ngModel" required
+            [(ngModel)]="adminLogin.id" minlength="5"/>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+
+            <div *ngIf="name.errors?.['required']">
+                Name is required.
+            </div>
+            <div *ngIf="name.errors?.['minlength']">
+                Name must be at least 5 characters long.
+            </div>
+        </div>
+
+        <label for="psw"><b>Password</b></label>
+        <input #password="ngModel" type="password" placeholder="Enter Password" name="password" #up="ngModel" required
+            [(ngModel)]="adminLogin.password" minlength="5" />
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert">
+
+            <div *ngIf="password.errors?.['required']">
+                Password is required.
+            </div>
+            
+        </div>
+        <hr>
+        <p>By Loging you accept our <a href="#">Terms & Privacy</a>.</p>
+        <button type="submit" class="registerbtn">Login</button>
+
+    </div>
+
+
+</form>

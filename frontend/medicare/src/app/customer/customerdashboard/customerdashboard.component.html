@@ -1,0 +1,50 @@
+<p> WELCOME TO MEDICARE {{name|uppercase}} </p>
+<div>
+    <button (click)="mycart()" class="btn btn-success" id="two">MY CART</button>
+    <button (click)="updateprofile()" class="btn btn-secondary" id="two">UPDATE PROFILE</button>
+    <button (click)="onclick()" class="btn btn-info" id="two">VIEW PRODUCTS</button>
+
+    
+
+    <button (click)="search()" class="btn btn-info" id="two">SEARCH</button>
+
+    <button (click)="CategoryComponent()" class="btn btn-info" id="two">PRODUCT BY CATERGORY</button>
+
+    <button (click)="gotohome()" class="btn btn-danger" id="one" >LOGOUT</button>
+</div>
+<br><br>
+<p *ngIf="ProductList.length === 0" class="">
+BUY WHAT U LIKE...
+</p>
+<!-- {{ProductList}} -->
+<form *ngIf="ProductList.length>0">
+    <p>
+        {{name|uppercase}} YOUR BOOKED PRODUCTS
+    </p>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>CART ID</th>
+                <th>PRODUCT ID</th>
+                <th>PRODUCT NAME</th>
+                <th>PRODUCT PRICE</th>
+                <th>PRODUCT TYPE</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let br of ProductList">
+                <td>{{br.id}}</td>
+                <td>{{br.pid}}</td>
+                <td> {{br.pname}} </td>
+                <td> {{br.price | currency:'INR'}} </td>
+                <td>{{br.ptype}}</td>
+
+            </tr>
+        </tbody>
+        <br>
+    </table>
+
+</form>
+
+
